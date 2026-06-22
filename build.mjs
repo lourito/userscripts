@@ -178,6 +178,24 @@ ${modules}
 
 fs.writeFileSync(path.join(distDir, "pack.user.js"), pack);
 
+// ---- terceiros: third-party/*.user.js (bundle no zip + tabela no README) ---
+// São scripts de OUTROS autores que eu recomendo. Vão no zip pra "instalar tudo"
+// trazer eles também; cada um mantém seu @updateURL → continua atualizando pelo
+// autor (Greasy/Sleazy Fork etc.). Pra remover um: apague o arquivo aqui.
+const tpDir = path.join(__dirname, "third-party");
+const thirdParty = (fs.existsSync(tpDir) ? fs.readdirSync(tpDir) : [])
+  .filter(f => f.endsWith(".user.js")).sort()
+  .map(f => {
+    const src = fs.readFileSync(path.join(tpDir, f), "utf8");
+    const { meta } = parse(src);
+    return {
+      base: f.replace(/\.user\.js$/, ""), src,
+      name: first(meta, "name") || f.replace(/\.user\.js$/, ""),
+      desc: first(meta, "description"),
+      url: first(meta, "downloadURL") || first(meta, "updateURL") || "",
+    };
+  });
+
 // ---- 2b) dist/userscripts.zip (backup importável → instala TODOS separados)
 // Formato de backup compartilhado por Violentmonkey/Tampermonkey: por script, o
 // trio nome.user.js + nome.options.json + nome.storage.json (flat no zip).
@@ -185,12 +203,13 @@ fs.writeFileSync(path.join(distDir, "pack.user.js"), pack);
 const stage = path.join(distDir, ".bundle");
 fs.rmSync(stage, { recursive: true, force: true });
 fs.mkdirSync(stage, { recursive: true });
-for (const p of parsed) {
-  const body = fs.readFileSync(path.join(distDir, `${p.name}.user.js`), "utf8");
-  fs.writeFileSync(path.join(stage, `${p.name}.user.js`), body);
-  fs.writeFileSync(path.join(stage, `${p.name}.options.json`), "{}");
-  fs.writeFileSync(path.join(stage, `${p.name}.storage.json`), "{}");
-}
+const stageScript = (base, body) => {
+  fs.writeFileSync(path.join(stage, `${base}.user.js`), body);
+  fs.writeFileSync(path.join(stage, `${base}.options.json`), "{}");
+  fs.writeFileSync(path.join(stage, `${base}.storage.json`), "{}");
+};
+for (const p of parsed) stageScript(p.name, fs.readFileSync(path.join(distDir, `${p.name}.user.js`), "utf8"));
+for (const tp of thirdParty) stageScript(tp.base, tp.src);   // recomendados (mantêm o @updateURL do autor)
 const zipPath = path.join(distDir, "userscripts.zip");
 fs.rmSync(zipPath, { force: true });
 execFileSync("zip", ["-j", "-q", zipPath, ...fs.readdirSync(stage).map(f => path.join(stage, f))]);
@@ -205,14 +224,11 @@ const cards = parsed
 const xen = parsed.find(p => p.name === "xenforo");
 if (xen) cards.push({ id: "xenforo", title: first(xen.meta, "name"), desc: first(xen.meta, "description") });
 
-let third = { scripts: [] };
-try { third = JSON.parse(fs.readFileSync(path.join(__dirname, "third-party.json"), "utf8")); } catch {}
-
 const trunc = (s, n) => { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "…" : s; };
 
 // --- README.md ---
 const mineRows = cards.map(c => `| **${c.id}** | ${trunc(c.title, 70).replace(/\|/g, "\\|")} | [Instalar](${RAW}/${c.id}.user.js) |`).join("\n");
-const thirdRows = (third.scripts || []).map(s => `| ${String(s.name).replace(/\|/g, "\\|")} | ${trunc(s.desc, 70).replace(/\|/g, "\\|")} | [Instalar](${s.url}) |`).join("\n");
+const thirdRows = thirdParty.map(s => `| ${String(s.name).replace(/\|/g, "\\|")} | ${trunc(s.desc, 70).replace(/\|/g, "\\|")} | [Instalar](${s.url}) |`).join("\n");
 const readme = `# Userscripts
 
 Tema escuro, players grandes e galerias pra vários sites (Bunkr, Pixeldrain, Filester, GoFile, Turbo, X/Twitter, Instagram, Reddit, Rule34, E-Hentai, fóruns XenForo).
@@ -223,14 +239,14 @@ Primeiro instale o **[Violentmonkey](https://violentmonkey.github.io/)** (ou Tam
 
 ### Opção 1 — todos de uma vez, como scripts separados (recomendado)
 
-Baixe **[userscripts.zip](${ZIP_URL})** e importe no painel — cada script entra **separado** (liga/desliga/atualiza sozinho):
+Baixe **[userscripts.zip](${ZIP_URL})** e importe no painel. Instala **tudo** — os meus + os recomendados de terceiros — cada um como entrada **separada** (liga/desliga/atualiza sozinho; os de terceiros atualizam pelo autor):
 
 - **Violentmonkey:** ⚙ Settings → *Import from file* → escolha o \`.zip\`.
 - **Tampermonkey:** *Utilities* → *Import from URL* → cole \`${ZIP_URL}\` (ou *Import from file*).
 
-### Opção 2 — tudo num arquivo só (1 clique)
+### Opção 2 — só os meus, num arquivo só (1 clique)
 
-**[⬇ Instalar pack](${RAW}/pack.user.js)** — um único userscript com todos os módulos dentro. Prático, mas monolítico (entra como 1 entrada só, all-or-nothing).
+**[⬇ Instalar pack](${RAW}/pack.user.js)** — um único userscript com os meus módulos dentro. Prático, mas monolítico (1 entrada só) e **não inclui os recomendados**.
 
 ### Avulsos
 
@@ -244,7 +260,7 @@ ${mineRows}
 ${(third.scripts || []).length ? `
 ## Também recomendo (de terceiros)
 
-Instalam do original — atualizam pelo autor.
+Já vêm no \`userscripts.zip\` acima. Pra instalar avulso, o link vai pro original — atualizam pelo autor.
 
 | Script | O que faz | |
 |---|---|---|

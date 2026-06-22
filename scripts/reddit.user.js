@@ -2,6 +2,7 @@
 // @name         Reddit Tweaks
 // @namespace    reddit-tweaks
 // @version      2.72.1
+// @author       claudiogepeto
 // @description  Painel de controle pro Reddit: atalhos do perfil na sidebar (colapsável), remoção de anúncios, autoplay de vídeos, largura do conteúdo, esconder sidebars/seções, topbar antiga e abas de ordenação. Tudo configurável por uma micro dock discreta (config, seleção em lote, voltar ao topo), persistido em localStorage.
 // @match        https://www.reddit.com/*
 // @match        https://sh.reddit.com/*

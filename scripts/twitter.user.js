@@ -2,6 +2,7 @@
 // @name         X / Twitter — Declutter + Wide (control panel)
 // @namespace    x-declutter-wide
 // @version      3.6.2
+// @author       claudiogepeto
 // @description  Floating control panel for X/Twitter: widen the layout, enlarge text, and toggle off Premium upsells, Creator Studio, Grok, "For You", trending, "Who to follow", views, the right sidebar and more. v3.4: BYPASS de idade / conteúdo sensível — porta Firefox-safe do "Pure Twitter (X) Age Bypass": patcha Response.prototype.text/json + XMLHttpRequest.prototype responseText/response (camada de PROTÓTIPO, imune a timing) via exportFunction e desembrulha o invólucro de visibilidade (TweetWithVisibilityResults→Tweet) reescrevendo a STRING da resposta. All preferences are saved to localStorage and applied live.
 // @match        https://x.com/*
 // @match        https://twitter.com/*

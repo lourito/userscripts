@@ -4,6 +4,7 @@
 // @version      1.11.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/rule34.user.js
 // @downloadURL  https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/rule34.user.js
+// @author       claudiogepeto
 // @description  Modern dark theme, full-width masonry grid with infinite scroll, grouped topbar with a curated tag-search modal, fullscreen lightbox viewer (image + video) for rule34.xxx
 // @match        https://rule34.xxx/*
 // @run-at       document-start

@@ -4,6 +4,7 @@
 // @version      3.54.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/ehentai.user.js
 // @downloadURL  https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/ehentai.user.js
+// @author       claudiogepeto
 // @description  Modern dark theme, full-width masonry/list gallery, infinite scroll, fixed icon topbar, floating dock, fullscreen viewer with filmstrip and max-quality downloads for E-Hentai / ExHentai
 // @match        https://e-hentai.org/*
 // @match        https://exhentai.org/*

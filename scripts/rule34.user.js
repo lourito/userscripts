@@ -2,6 +2,7 @@
 // @name         Rule34 Dark + Full-Width Grid
 // @namespace    rule34-dark-grid
 // @version      1.11.0
+// @author       claudiogepeto
 // @description  Modern dark theme, full-width masonry grid with infinite scroll, grouped topbar with a curated tag-search modal, fullscreen lightbox viewer (image + video) for rule34.xxx
 // @match        https://rule34.xxx/*
 // @run-at       document-start

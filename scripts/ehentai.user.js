@@ -2,6 +2,7 @@
 // @name         E-Hentai Dark + Full-Width Gallery
 // @namespace    ehentai-dark-gallery
 // @version      3.54.0
+// @author       claudiogepeto
 // @description  Modern dark theme, full-width masonry/list gallery, infinite scroll, fixed icon topbar, floating dock, fullscreen viewer with filmstrip and max-quality downloads for E-Hentai / ExHentai
 // @match        https://e-hentai.org/*
 // @match        https://exhentai.org/*
