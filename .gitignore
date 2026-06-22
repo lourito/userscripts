@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# node
+node_modules/
+
+# Fixtures de dev (páginas/vídeos salvos p/ testar seletores) — pesados, descartáveis,
+# e o HTML salvo às vezes traz token de sessão embutido. NUNCA versionar.
+/fixtures/
