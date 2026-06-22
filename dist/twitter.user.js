@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         X / Twitter — Declutter + Wide (control panel)
+// @name         X (Twitter) — Control Panel, Wide Layout & Age Bypass
 // @namespace    x-declutter-wide
 // @version      3.6.2
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/twitter.user.js

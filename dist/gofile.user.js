@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GoFile — grade + stage estilo Bunkr/Pixeldrain/Filester/Turbo
+// @name         GoFile — Card Grid, Search & Theater Stage
 // @namespace    gofile-grid
 // @version      3.0.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/gofile.user.js

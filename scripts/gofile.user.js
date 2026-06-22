@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GoFile — grade + stage estilo Bunkr/Pixeldrain/Filester/Turbo
+// @name         GoFile — Card Grid, Search & Theater Stage
 // @namespace    gofile-grid
 // @version      3.0.0
 // @description  Reestrutura a pasta do GoFile (gofile.io/d/) NO MESMO formato dos outros scripts. PASTA: remove a sidebar, coloca uma TOPBAR (logo + busca que filtra os arquivos), conteúdo em LARGURA TOTAL, e os arquivos (que eram lista) viram uma GRADE de cards (thumb 16:9 + nome + meta + Download). STAGE (ao clicar num arquivo): overlay fixo igual ao bunkr — (1) TOPBAR com infos do arquivo (pasta/nome/tamanho + Download/Tela cheia), (2) a MÍDIA grande no meio (reusa o item_play NATIVO do gofile, que resolve o item.link, e MOVE o player pro stage → sem precisar de API/token), (3) STRIP da galeria no rodapé com os outros arquivos + o atual marcado + ◀▶. TEMA AMOLED + accent azul. SPA: MutationObserver no #filemanager_itemslist trata itens conforme nascem/paginam. Engine intacta. @include por regex.

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         E-Hentai Dark + Full-Width Gallery
+// @name         E-Hentai 2.0
 // @namespace    ehentai-dark-gallery
 // @version      3.54.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/ehentai.user.js

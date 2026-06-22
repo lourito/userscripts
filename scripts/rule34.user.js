@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Rule34 Dark + Full-Width Grid
+// @name         Rule34 Remastered
 // @namespace    rule34-dark-grid
 // @version      1.11.0
 // @author       claudiogepeto

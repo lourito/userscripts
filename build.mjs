@@ -257,7 +257,7 @@ Quer só alguns? Tabela abaixo, um por um.
 | Script | O que faz | |
 |---|---|---|
 ${mineRows}
-${(third.scripts || []).length ? `
+${thirdParty.length ? `
 ## Também recomendo (de terceiros)
 
 Já vêm no \`userscripts.zip\` acima. Pra instalar avulso, o link vai pro original — atualizam pelo autor.

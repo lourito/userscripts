@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Modern SimpCity/SocialMediagirls
+// @name         SimpCity & SocialMediaGirls — Full Redesign
 // @namespace    http://tampermonkey.net/
 // @version      2.50.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/xenforo.user.js

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Pixeldrain — UI amoled/verde + player via mirror (bypass do limite)
+// @name         Pixeldrain — Mirror Bypass & Theater Player (AMOLED)
 // @namespace    pixeldrain-mirror-player
 // @version      14.11.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/pixeldrain.user.js

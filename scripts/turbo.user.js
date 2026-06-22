@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Turbo — stage estilo Bunkr/Pixeldrain/Filester (player próprio + strip do álbum)
+// @name         Turbo — Native Player & Theater Stage (embed bypass)
 // @namespace    turbo-theater
 // @version      1.0.0
 // @description  Reestrutura a página de VÍDEO do turbo.cr (/v/) num STAGE igual ao bunkr/pixeldrain/filester: STAGE fixed cobrindo a página com (1) TOPBAR de info (Álbum/nome/tamanho/views + Download/Copiar/Tela cheia/Report), (2) a MÍDIA preenchendo o meio — PLAYER PRÓPRIO (a página nativa só tem um <iframe> de embed; aqui pego o mp4 assinado via GET /api/sign?v={id} e toco num <video> próprio, com refresh antes do exp e fallback p/ o iframe nativo se a API falhar), (3) FOOTER com a STRIP rolável dos outros vídeos do álbum ("More videos", clonados) + item atual marcado + ◀▶. ÁLBUM (/a/): tema AMOLED + tabela de arquivos estilizada. TEMA AMOLED #0b0c0f. EARLY PAINT no document-start (sem flash). Escopo TRAVADO no domínio turbo.cr (sem regex amplo) p/ não impactar outros scripts.

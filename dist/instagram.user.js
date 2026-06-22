@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Instagram — UI nativa (player + feed em mosaico)
+// @name         Instagram — Native Video Controls & Mosaic Feed
 // @namespace    instagram-native-player
 // @version      3.11.3
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/instagram.user.js

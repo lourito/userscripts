@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Reddit Tweaks
+// @name         Reddit — Control Panel, Ad-Free & RedGIFs Player
 // @namespace    reddit-tweaks
 // @version      2.72.1
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/reddit.user.js

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Turbo — stage estilo Bunkr/Pixeldrain/Filester (player próprio + strip do álbum)
+// @name         Turbo — Native Player & Theater Stage (embed bypass)
 // @namespace    turbo-theater
 // @version      1.0.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/turbo.user.js

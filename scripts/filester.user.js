@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Filester — stage estilo Bunkr/Pixeldrain (player grande + strip do álbum)
+// @name         Filester — Theater Stage, Album Strip & Gallery
 // @namespace    filester-theater
 // @version      2.0.0
 // @description  Reestrutura a página de ARQUIVO do filester (filester.me/.sh/.gg & afins) num STAGE igual ao bunkr/pixeldrain — em vez de só temar o fluxo nativo (player travado em 40vh, download lá no fim, header gigante). (1) STAGE fixed cobrindo a página: TOPBAR de info no topo (Galeria/nome/tamanho/tipo + Download/Copiar/Tela cheia/Report), a MÍDIA preenchendo o meio (o #videoContainer/.image-container NATIVO é MOVIDO pra cá → a engine loadVideo()/Plyr do filester continua viva, não quebra), e um FOOTER com a STRIP rolável dos outros arquivos ("More from <user>", clonados do .related-files-grid) com ◀▶. (2) VÍDEO: tira o cap de 40vh → o maior que cabe na viewport, centralizado. (3) FOTO: zoom em níveis (1x→2x→4x no clique) + drag pan. (4) ÁLBUM/galeria (/f/): grade larga AMOLED com mais colunas + cards bonitos. (5) TEMA AMOLED #0b0c0f. EARLY PAINT: placeholder preto via CSS no document-start cobre a interface nativa até o stage montar (sem flash); fallback some se não achar mídia. @include por regex (o TLD muda).

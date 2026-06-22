@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Filester — stage estilo Bunkr/Pixeldrain (player grande + strip do álbum)
+// @name         Filester — Theater Stage, Album Strip & Gallery
 // @namespace    filester-theater
 // @version      2.0.0
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/filester.user.js

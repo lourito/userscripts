@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Bunkr — player grande estilo YouTube
+// @name         Bunkr — Theater Player, Gallery, Mirror & Downloader
 // @namespace    bunkr-youtube-player
 // @version      2.5.2
 // @updateURL    https://raw.githubusercontent.com/claudiogepeto/userscripts/main/dist/bunkr.user.js
